@@ -1,0 +1,45 @@
+body {
+    font-family: 'Hepta Slab', serif;
+    margin:auto;
+    width:80%;
+}
+
+div {
+  padding-bottom:12px;
+}
+
+.errorBox {
+    padding: 10px 0px 10px 10px;
+    background-color: #f73b31;
+    color:white;
+    display:block;
+    border-style: 1px dotted;
+    margin-bottom:1em;
+}
+
+.error {
+    background-color:red;
+}
+
+
+.loading {
+    background-image: url('../img/ajax-loader.gif');
+    background-repeat: no-repeat;
+  }
+  
+  .centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  #employeeList {
+    width:50%;
+    float:left;
+  }
+
+  #employeeInfo {
+    width:50%;
+    float:right;
+  }
