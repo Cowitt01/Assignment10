@@ -48,22 +48,22 @@ const onEmployeeClicked = (e) => {                                           // 
     $('#errorHolder').html('');
     employeeInfo.innerHTML = '';
 
-    fetch (`${baseUrl}\/${e.currentTarget.id}`)                              // fetch the employee details using the employee ID from the clicked element
+    fetch (`${baseUrl}\/${e.currentTarget.id}`)                              // get the employee details using the employee ID from the clicked element
     .then(response => response.json())
     .then((employee) => {
-        let div = document.createElement('div');                             // create a div to hold the employee information
+        let div = document.createElement('div');                             // create a division for employee information
         
-        let img = document.createElement('img');                             // create an image element for the employee's photo
-            img.src = employee.image_filename;                               // set the source of the image to the employee's photo
-            img.alt = `${employee.first_name} ${employee.last_name}`;        // set the alt text of the image to the employee's name
+        let img = document.createElement('img');                             // create an image element for employee's photo
+            img.src = employee.image_filename;                               // set image source to employee's photo
+            img.alt = `${employee.first_name} ${employee.last_name}`;        // set the alt text to employee name
 
-        let h1 = document.createElement('h1');                              // create an h1 element for the employee's name
+        let h1 = document.createElement('h1');                              // create a h1 html element for the employee's name
             h1.innerText = `${employee.first_name} ${employee.last_name}`;
 
-        let divDepartment = document.createElement('div');                  // create a div for the employee's department
+        let divDepartment = document.createElement('div');                  // create a division element for the employee's department
             divDepartment.innerText = `Department: ${employee.department.name}`;
 
-        let divSalary = document.createElement('div');                     // create a div for the employee's annual salary
+        let divSalary = document.createElement('div');                     // create a division element for employee salary
  
         divSalary.innerText = `Annual Salary: ${accounting.formatMoney(employee.annual_salary)}`; // format the annual salary using the accounting.js library (using formatMoney function)
                                                                                                   //Default settings for accounting.js formatMoney():
@@ -73,19 +73,19 @@ const onEmployeeClicked = (e) => {                                           // 
                                                                                                     Thousands Separator: , (comma)
                                                                                                     Precision (Decimal Places): */
  
-         let divHireDate = document.createElement('div');                                        // create a div for the hire date
+         let divHireDate = document.createElement('div');                                        // create a division element for hire date
             divHireDate.innerText = `Hire Date: ${employee.hire_date}`;                          // display the hire date
 
             div.appendChild(img);
             div.appendChild(h1);
-            div.appendChild(divDepartment);                                                      // append the department div to the main div
-            div.appendChild(divSalary);                                                          // append the salary div to the main div
-            div.appendChild(divHireDate);                                                        // append the hire date div to the main div
+            div.appendChild(divDepartment);                                                      // append the department division to the main division
+            div.appendChild(divSalary);                                                          // append the salary division to the main divison
+            div.appendChild(divHireDate);                                                        // append the hire date division to the main division
 
-            employeeInfo.appendChild(div);                                                       // append the employee info div to the main div
+            employeeInfo.appendChild(div);                                                       // append the employee info div to the main division
       })
      
-      .catch((e) => {                                                              // if the api call fails the error message is displayed in the console
+      .catch((e) => {                                                              // if the api call fails, the error message is displayed
         console.log(e.message);
       });
   };
