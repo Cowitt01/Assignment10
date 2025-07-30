@@ -51,19 +51,19 @@ const onEmployeeClicked = (e) => {                                           // 
     fetch (`${baseUrl}\/${e.currentTarget.id}`)                              // get the employee details using the employee ID from the clicked element
     .then(response => response.json())
     .then((employee) => {
-        let div = document.createElement('div');                             // create a division for employee information
+        let div = document.createElement('div');                             // create a HTML division for employee information
         
-        let img = document.createElement('img');                             // create an image element for employee's photo
+        let img = document.createElement('img');                             // create an image HTML element for employee's photo
             img.src = employee.image_filename;                               // set image source to employee's photo
-            img.alt = `${employee.first_name} ${employee.last_name}`;        // set the alt text to employee name
+            img.alt = `${employee.first_name} ${employee.last_name}`;        // set the "alt text" to employee name
 
-        let h1 = document.createElement('h1');                              // create a h1 html element for the employee's name
+        let h1 = document.createElement('h1');                              // create a h1 HTML element for the employee's name
             h1.innerText = `${employee.first_name} ${employee.last_name}`;
 
-        let divDepartment = document.createElement('div');                  // create a division element for the employee's department
+        let divDepartment = document.createElement('div');                  // create a HTML division element for the employee's department
             divDepartment.innerText = `Department: ${employee.department.name}`;
 
-        let divSalary = document.createElement('div');                     // create a division element for employee salary
+        let divSalary = document.createElement('div');                     // create a division HTML element for employee salary
  
         divSalary.innerText = `Annual Salary: ${accounting.formatMoney(employee.annual_salary)}`; // format the annual salary using the accounting.js library (using formatMoney function)
                                                                                                   //Default settings for accounting.js formatMoney():
@@ -73,7 +73,7 @@ const onEmployeeClicked = (e) => {                                           // 
                                                                                                     Thousands Separator: , (comma)
                                                                                                     Precision (Decimal Places): */
  
-         let divHireDate = document.createElement('div');                                        // create a division element for hire date
+         let divHireDate = document.createElement('div');                                        // create a division HTML element for hire date
             divHireDate.innerText = `Hire Date: ${employee.hire_date}`;                          // display the hire date
 
             div.appendChild(img);
